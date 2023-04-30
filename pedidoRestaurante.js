@@ -1,52 +1,104 @@
+let namesItens=""
+let itens=""
+let itensTable= 0
 
-let itens=[
-["Pilsen"],
-["Red"],,
-["Ipa "]
-] 
+let quantidadeDeMesa = []
 
- const quantidadeDeMesas= []
- let menu= ""
+function abrirMesa(){
+  let mesa={}
 
+  mesa.numeroMesa=Number(prompt("Numero da mesa"))
+  mesa.pessoas= Number(prompt(`Quantas pessoas tem na mesa`))
+  
 
-  do {
-    menu = prompt(` lista de mesa:
-    ${quantidadeDeMesas.length}
-    1- Abrir mesa
-    2- mostrar itens
-    3- sair do programa`)
+  const order= prompt(`Estes são os produtos${itens}`)
+  const confirmOrder= confirm(`Deseja confirmar o pedido? ${order}`)
 
-    switch(menu){
-        case"1":
-        const mesa={}
+  if(confirmOrder){
+    quantidadeDeMesa.push(mesa)
+    alert(`Confirm order `)
+  }
+}
 
-        mesa.numeroMesa= Number(prompt(`Numero da mesa`))
-        mesa.pessoas= Number(prompt(`Número de pessoas`))
-        // mesa.pedido= prompt("Faça seu pedido aqui")
-        const pedido=prompt(`estes são os produtos ${itens}`)
-        const confirmarPedido = confirm(
-          `Lista do seu pedido:
-          ${pedido}`
-        )
-       if(confirmarPedido){
-        quantidadeDeMesas.push(mesa)
-        alert("Pedido Confirmado")
-       }
+function showTable(){
+  for(let i=0; i <quantidadeDeMesa.length; i++){
+    alert(`Mesa ${i+1} 
+    numero da mesa ${quantidadeDeMesa[i].numeroMesa}
+    quantidade de pessoas ${quantidadeDeMesa[i].pessoas}
+    quantidade de  pedido ${quantidadeDeMesa[i].itens}`)
+    
+  }
+
+}
+ function closeProgram(){
+  alert(`Close program`)
+ }
+
+ function invalidoption(){
+  alert(`Invalid option`)
+ }
+ 
+ function menu(){
+  let choice= ""
+  do{
+    choice = prompt(`Choice Option :${quantidadeDeMesa.length}
+     1. Abrir mesa
+     2. Mostrar Mesa
+     3. Sair da mesa
+    `)
+    // switch(choice){
+      
+    //   case "1":
+    //     let choiceItens=prompt(`choice option:
+    //     1. Chop
+    //     2. Food
+    //     3. Drink`)
+    //       switch(choiceItens){
+    //         case "1":
+    //           namesItens+=`Itens:
+    //           1. Pilsen
+    //           2. Red
+    //           3. Ipa
+    //           4. Summer`
+    //           itens+=`${namesItens}` 
+    //           itensTable++
+    //         break;
+    //         case "2":
+    //           choiceItens=prompt(`choice option:
+    //           1. Ancho
+    //           2. Joelho
+    //           3. Pastel
+    //           4. Sertão`)
+    //           itens+=`${namesItens}`
+    //           itensTable++
+    //           break;
+    //           case"3":
+    //            choiceItens=prompt(`choice option:
+    //           1. Ice Lemonade
+    //           2. Caipe
+    //           3. start Irish Coffe`)
+    //           itens+=`${nameItens}`
+    //           itensTable++
+    //           break;
+    //           default:
+    //             alert("invakid Option")
+    //             break;
+    //       }
+    // }
+    switch (choice){
+      case "1":
+        abrirMesa();
         break;
-        case"2":
-        for(let i =0; i <quantidadeDeMesas.length;i++){
-          alert(`mesa ${(i + 1)}
-                Numero da mesa: ${quantidadeDeMesas[i].numeroMesa}
-                Quantidade de pessoas: ${quantidadeDeMesas[i].pessoas}
-                pedido: ${quantidadeDeMesas[i].pedido}`
-            )
-        }
-        break;
-        case"3":
-        alert("saindo do programa")
-        break;
-        default:
-            alert("Opção invalida")
-
+        case "2":
+          showTable();
+          break;
+          case"3":
+          closeProgram();
+          break;
+          default:
+            invalidoption();
+            break;
     }
-  } while (menu !=="3");
+  }while(choice!=="3")
+ }
+ menu();
