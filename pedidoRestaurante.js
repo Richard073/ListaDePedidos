@@ -46,45 +46,7 @@ function showTable(){
      2. Mostrar Mesa
      3. Sair da mesa
     `)
-    // switch(choice){
-      
-    //   case "1":
-    //     let choiceItens=prompt(`choice option:
-    //     1. Chop
-    //     2. Food
-    //     3. Drink`)
-    //       switch(choiceItens){
-    //         case "1":
-    //           namesItens+=`Itens:
-    //           1. Pilsen
-    //           2. Red
-    //           3. Ipa
-    //           4. Summer`
-    //           itens+=`${namesItens}` 
-    //           itensTable++
-    //         break;
-    //         case "2":
-    //           choiceItens=prompt(`choice option:
-    //           1. Ancho
-    //           2. Joelho
-    //           3. Pastel
-    //           4. Sertão`)
-    //           itens+=`${namesItens}`
-    //           itensTable++
-    //           break;
-    //           case"3":
-    //            choiceItens=prompt(`choice option:
-    //           1. Ice Lemonade
-    //           2. Caipe
-    //           3. start Irish Coffe`)
-    //           itens+=`${nameItens}`
-    //           itensTable++
-    //           break;
-    //           default:
-    //             alert("invakid Option")
-    //             break;
-    //       }
-    // }
+
     switch (choice){
       case "1":
         abrirMesa();
